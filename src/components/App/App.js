@@ -28,18 +28,6 @@ class App extends Component {
     });
   };
 
-  //Implement for POST request
-  // addReservation = (newReservation) => {
-  //   postReservation(newReservation)
-  //   .then(result => {
-  //     if(result.id) {
-  //       this.setState({reservations: [...this.state.reservations, newReservation], error: ''})
-  //     } else {
-  //       this.setState({error: 'Please fill out all fields!'})
-  //     }
-  //   })
-  // }
-
   render() {
     return (
       <div className="App">
