@@ -15,10 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     fetchAllReservations()
-      .then((data) => {
-        console.log(data);
-        this.setState({ reservations: data });
-      })
+      .then((data) => this.setState({ reservations: data }))
       .catch((error) =>
         this.setState({ ...this.state, error: "Something went wrong!" })
       );
