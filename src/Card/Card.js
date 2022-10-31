@@ -1,13 +1,14 @@
 import React from 'react'
+import './Card.css'
 
-const Card = ({name, date, time, guests}) => {
+const Card = ({name, date, time, guests, id, removeReservation}) => {
     return (
         <section className = 'card'>
-            <h2>{name}</h2>
+            <h3>{name}</h3>
             <p>{date}</p>
             <p>{time} pm</p>
             <p>Number of Guests: {guests}</p>
-            <button className = "cancel-btn">Cancel</button>
+            <button onClick = {() => removeReservation(id)} className = "cancel-btn">Cancel</button>
         </section>
     )
 }
