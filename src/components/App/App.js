@@ -19,6 +19,17 @@ class App extends Component {
     .catch(error => this.setState({...this.state, error: 'Something went wrong!'}))
   }
 
+  addReservation = (newReservation) => {
+    postReservation(newReservation)
+    .then(result => {
+      if(result.id) {
+        this.setState({reservations: [...this.state, newReservation], error: ''})
+      } else {
+        this.setState({error: 'Please fill out all fields!'})
+      }
+    })
+  }
+
   render() {
     return (
       <div className="App">
