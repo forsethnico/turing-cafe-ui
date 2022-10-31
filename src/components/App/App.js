@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { fetchAllReservations } from '../../apiCalls';
+import { fetchAllReservations, postReservation } from '../../apiCalls';
+import Form from '../../Form/Form'
 import Reservations from '../../Reservations/Reservations'
-// import Form from '../../Form/Form'
 import './App.css';
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
     postReservation(newReservation)
     .then(result => {
       if(result.id) {
-        this.setState({reservations: [...this.state, newReservation], error: ''})
+        this.setState({reservations: [...this.state.reservations, newReservation], error: ''})
       } else {
         this.setState({error: 'Please fill out all fields!'})
       }
@@ -35,7 +35,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          {/* <Form addReservation={this.addReservation}/> */}
+          <Form addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
           <Reservations reservations={this.state.reservations}/>

@@ -1,0 +1,14 @@
+form {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+button {
+    background-color: teal;
+    color: white;
+}
+
+input {
+    background-color: white;
+}

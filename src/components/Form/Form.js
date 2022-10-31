@@ -3,7 +3,7 @@ import './Form.css'
 
 class Form extends Component {
     constructor() {
-        super()
+        super();
         this.state = {
             name: '',
             date: '',
@@ -43,4 +43,4 @@ class Form extends Component {
      }        
 }
 
-export default Component
+export default Form;
