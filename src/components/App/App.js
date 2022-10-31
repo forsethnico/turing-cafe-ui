@@ -15,7 +15,9 @@ class App extends Component {
 
   componentDidMount() {
     fetchAllReservations()
-    .then(reservations => this.setState({reservations}))
+    .then(data => {
+      console.log(data)
+      this.setState({reservations: data})})
     .catch(error => this.setState({...this.state, error: 'Something went wrong!'}))
   }
 
@@ -23,6 +25,7 @@ class App extends Component {
     this.setState({reservations: [...this.state.reservations, newReservation], error: ''})
   }
 
+  //Implement for POST request
   // addReservation = (newReservation) => {
   //   postReservation(newReservation)
   //   .then(result => {
